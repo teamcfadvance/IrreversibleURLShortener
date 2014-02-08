@@ -1,11 +1,12 @@
 IrreversibleURLShortener
 ========================
 
-Provides functions for generating an irreversible key of variable length to be used as a shortened URL variable. In response to a question in the <a href="https://groups.google.com/forum/#!msg/tacfug/d4mFhPLzFUU/ezbeMV539XkJ">TACFUG google group</a>, I have create this project to demonstrate a couple of ways in which to generate shortened URL variables to use in place of longer (e.g. CreateUUID()) variables.
+Provides functions for generating an irreversible key of variable length to be used as a shortened URL variable. In response to a question in the <a href="https://groups.google.com/forum/#!msg/tacfug/d4mFhPLzFUU/ezbeMV539XkJ">TACFUG google group</a>, I have created this project to demonstrate a few ways in which to generate shortened URL variables to use in place of longer (e.g. CreateUUID()) variables.
 
 This package relies on having a database table with a column that stores the generated keys produced by this code. As such, this package includes two CFC's:
 
 /Datasource.cfc
+<br />
 /IrreversibleURLShortener.cfc
 
 The Datasource.cfc is consumed (required) by the IrreversibleURLShortener.cfc.
@@ -40,4 +41,22 @@ Then, call the method passing in the [table] and [column] that stores the key to
   column    = 'mycolumn',
   keyLength = myNumericKeyLength,
   method    = 'alphanum'
+) /&gt;
+
+**OR**
+
+&lt;cfset myShortUrl = urlShortMethod(
+  table     = 'mytable',
+  column    = 'mycolumn',
+  keyLength = myNumericKeyLength,
+  method    = 'alpha'
+) /&gt;
+
+**OR**
+
+&lt;cfset myShortUrl = urlShortMethod(
+  table     = 'mytable',
+  column    = 'mycolumn',
+  keyLength = myNumericKeyLength,
+  method    = 'numeric'
 ) /&gt;
