@@ -64,7 +64,7 @@
 		<!--- var scope set up a list of alpha-numeric characters to use for generating an alphanum key --->
 		<cfset var alphaOnly = 'A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z' />
 		<cfset var numOnly = '0,1,2,3,4,5,6,7,8,9' />
-		<cfset var alphaNum = alphaOnly & ',' & numOnly />
+		<cfset var alphaNum = ListAppend(alphaOnly,numOnly) />
 		<cfset var thisKey = '' />
 		<cfset var keySeed = '' />
 		<cfset var iX = 0 />
