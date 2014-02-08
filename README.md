@@ -19,7 +19,8 @@ To use, first initialize the datasource model/bean and the IrrversibleURLShorten
   username  = 'myusername', 
   password  = 'mypassword') 
 /&gt;
-&lt;cfset urlShortMethod = CreateObject('component','IrreversibleURLShortener').init(datasource = db) /&rt;
+<br />
+&lt;cfset urlShortMethod = CreateObject('component','IrreversibleURLShortener').init(datasource = db) /&gt;
 
 -----------
 
