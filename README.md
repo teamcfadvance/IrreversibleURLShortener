@@ -23,7 +23,7 @@ To use, first initialize the datasource model/bean and the IrrversibleURLShorten
 
 -----------
 
-Then, call the method passing in the [table] and [column] that stores the key to check the existence of in the database using one of the available methods (hash or alphanum):
+Then, call the method passing in the [table] and [column] that stores the key to check the existence of in the database , optionally specifying the length of the generated key (6 chars by default) using one of the available methods (hash or alphanum, has by default):
 
 &lt;cfset myShortUrl = urlShortMethod(
   table     = 'mytable',
