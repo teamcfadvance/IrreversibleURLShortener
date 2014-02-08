@@ -91,7 +91,7 @@
 		
 			<!--- using the 'numeric method, loop through [keyLength] times --->
 			<cfloop from="1" to="#ARGUMENTS.keyLength#" index="iX">
-				<!--- and add a random char from the [alphaNum] list --->
+				<!--- and add a random char from the [alphaOnly] list --->
 				<cfset thisKey = thisKey & LisGetAt(alphaOnly,RandRange(1,ListLen(alphaOnly))) />
 			</cfloop>	
 		
@@ -100,7 +100,7 @@
 		
 			<!--- using the 'numeric method, loop through [keyLength] times --->
 			<cfloop from="1" to="#ARGUMENTS.keyLength#" index="iX">
-				<!--- and add a random char from the [alphaNum] list --->
+				<!--- and add a random char from the [numOnly] list --->
 				<cfset thisKey = thisKey & LisGetAt(numOnly,RandRange(1,ListLen(numOnly))) />
 			</cfloop>		
 		
