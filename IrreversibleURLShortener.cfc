@@ -62,9 +62,9 @@
 		<cfargument name="method" type="string" required="true" hint="I am the method of key generation, one of: hash, alpha, alphanum, or numeric." />
 		
 		<!--- var scope set up a list of alpha-numeric characters to use for generating an alphanum key --->
-		<cfset var alphaNum = 'A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,0,1,2,3,4,5,6,7,8,9' />
 		<cfset var alphaOnly = 'A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z' />
 		<cfset var numOnly = '0,1,2,3,4,5,6,7,8,9' />
+		<cfset var alphaNum = alphaOnly & ',' & numOnly />
 		<cfset var thisKey = '' />
 		<cfset var keySeed = '' />
 		<cfset var iX = 0 />
@@ -89,7 +89,7 @@
 		<!--- otherwise, check if we're using the 'alpha' method of key generation --->
 		<cfelseif FindNoCase('alpha',ARGUMENTS.method)>
 		
-			<!--- using the 'numeric method, loop through [keyLength] times --->
+			<!--- using the 'alpha' method, loop through [keyLength] times --->
 			<cfloop from="1" to="#ARGUMENTS.keyLength#" index="iX">
 				<!--- and add a random char from the [alphaOnly] list --->
 				<cfset thisKey = thisKey & LisGetAt(alphaOnly,RandRange(1,ListLen(alphaOnly))) />
@@ -98,11 +98,11 @@
 		<!--- otherwise, check if we're using the 'numeric' method of key generation --->
 		<cfelseif FindNoCase('numeric',ARGUMENTS.method)>
 		
-			<!--- using the 'numeric method, loop through [keyLength] times --->
+			<!--- using the 'numeric' method, loop through [keyLength] times --->
 			<cfloop from="1" to="#ARGUMENTS.keyLength#" index="iX">
 				<!--- and add a random char from the [numOnly] list --->
 				<cfset thisKey = thisKey & LisGetAt(numOnly,RandRange(1,ListLen(numOnly))) />
-			</cfloop>		
+			</cfloop>
 		
 		</cfif>
 		
