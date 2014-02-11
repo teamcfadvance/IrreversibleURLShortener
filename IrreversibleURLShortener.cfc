@@ -36,7 +36,7 @@
 		) />
 		
 		<!--- loop while there is already a matching key already used in [table].[column] --->
-		<cfloop condition="#NOT isValidKey#">		
+		<cfloop condition="NOT isValidKey">		
 			<!--- get the next iteration of a generated key to check --->
 			<cfset var thisKey = getKey( 
 				keyLength	= ARGUMENTS.keyLength, 
@@ -83,7 +83,7 @@
 			<!--- using the 'alphanum' method, loop through [keyLength] times --->
 			<cfloop from="1" to="#ARGUMENTS.keyLength#" index="iX">
 				<!--- and add a random char from the [alphaNum] list --->
-				<cfset thisKey = thisKey & LisGetAt(alphaNum,RandRange(1,ListLen(alphaNum))) />
+				<cfset thisKey = thisKey & ListGetAt(alphaNum,RandRange(1,ListLen(alphaNum))) />
 			</cfloop>		
 			
 		<!--- otherwise, check if we're using the 'alpha' method of key generation --->
@@ -92,7 +92,7 @@
 			<!--- using the 'alpha' method, loop through [keyLength] times --->
 			<cfloop from="1" to="#ARGUMENTS.keyLength#" index="iX">
 				<!--- and add a random char from the [alphaOnly] list --->
-				<cfset thisKey = thisKey & LisGetAt(alphaOnly,RandRange(1,ListLen(alphaOnly))) />
+				<cfset thisKey = thisKey & ListGetAt(alphaOnly,RandRange(1,ListLen(alphaOnly))) />
 			</cfloop>	
 		
 		<!--- otherwise, check if we're using the 'numeric' method of key generation --->
@@ -101,7 +101,7 @@
 			<!--- using the 'numeric' method, loop through [keyLength] times --->
 			<cfloop from="1" to="#ARGUMENTS.keyLength#" index="iX">
 				<!--- and add a random char from the [numOnly] list --->
-				<cfset thisKey = thisKey & LisGetAt(numOnly,RandRange(1,ListLen(numOnly))) />
+				<cfset thisKey = thisKey & ListGetAt(numOnly,RandRange(1,ListLen(numOnly))) />
 			</cfloop>
 		
 		</cfif>
