@@ -29,7 +29,7 @@ Then, call the method passing in the [table] and [column] that stores the key to
 
 
 ```ColdFusion
-<cfset myShortUrl = urlShortMethod(
+<cfset myShortUrl = urlShortMethod.getShortURL(
   table     = 'mytable',
   column    = 'mycolumn',
   keyLength = myNumericKeyLength,
@@ -40,7 +40,7 @@ Then, call the method passing in the [table] and [column] that stores the key to
 **OR**
 
 ```ColdFusion
-<cfset myShortUrl = urlShortMethod(
+<cfset myShortUrl = urlShortMethod.getShortURL(
   table     = 'mytable',
   column    = 'mycolumn',
   keyLength = myNumericKeyLength,
@@ -51,7 +51,7 @@ Then, call the method passing in the [table] and [column] that stores the key to
 **OR**
 
 ```ColdFusion
-<cfset myShortUrl = urlShortMethod(
+<cfset myShortUrl = urlShortMethod.getShortURL(
   table     = 'mytable',
   column    = 'mycolumn',
   keyLength = myNumericKeyLength,
@@ -62,7 +62,7 @@ Then, call the method passing in the [table] and [column] that stores the key to
 **OR**
 
 ```ColdFusion
-<cfset myShortUrl = urlShortMethod(
+<cfset myShortUrl = urlShortMethod.getShortURL(
   table     = 'mytable',
   column    = 'mycolumn',
   keyLength = myNumericKeyLength,
