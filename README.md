@@ -69,3 +69,11 @@ Then, call the method passing in the [table] and [column] that stores the key to
   method    = 'numeric'
 ) />
 ```
+
+------------
+
+**DEMO**
+
+This package now also includes a demonstration index.cfm, an Application.cfc where default values are defined, and a MySQL script to generate the demo table used.
+
+[You can also view a live demo of this code](http://css.dvdmenubacks.com/IUSDemo/)
